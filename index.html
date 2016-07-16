@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Felicia &amp; Tim</title>
+
+    <!-- 
+!-- <%= cow %>
+      -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+	
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left
+      {display:none !important;}
+    </style>
+  </head>
+  <body>
+    <nav class="container-fluid visible-md-block visible-lg-block" id="main-nav" style="top: 0px;">
+      <div class="container">
+	<ul>
+	  <li><a class="scroll-link" data-target="location" href="#location"><%= l["venue"] %></a></li>
+	  <li><a class="scroll-link" data-target="schedule" href="#schedule"><%= l["schedule"] %></a></li>
+	  <li><a class="scroll-link" data-target="people" href="#people"><%= l["people"] %></a></li>
+	  <li><a class="scroll-link" data-target="faq" href="#faq"><%= l["faq"] %></a></li>
+	</ul>
+      </div>
+    </nav>
+
+    <header class="container-fluid" id="header">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-8 col-md-offset-2 text-center">
+	    <div id="countdown">Felicia &amp; Tim</div>
+	    
+	    <span class="title"><%= l["title"] %></span>
+	    <span class="subtitle"><%= l["subtitle"] %></span>
+	  </div>
+	</div>
+      </div>
+
+      <div class="bg-overlay-gradient"></div>
+      <div class="header-bg"></div>
+    </header>
+
+    <section class="container-fluid bg-grey" id="location">
+      <div class="container">
+      	<div class="row">
+      	  <div class="col-md-4 col-sm-6">
+      	    <div class="location-card">
+      	      <img src="./images/bleiche.jpg" class="img-responsive">
+      	    </div>
+      	  </div>
+      	</div>
+      </div>
+      <div class="location-map">
+	<iframe
+	   id="location-map-iframe"
+	   class="scrolloff"
+	   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9859.927554459118!2d14.1258732!3d51.8430265!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb476ca348f0881e7!2sBLEICHE+RESORT+%26+SPA!5e0!3m2!1sde!2sde!4v1465728118040"
+	   width="100%" height="100%" frameborder="0" style="border:0;height:100%;width:100%;" allowfullscreen="">
+	</iframe>
+      </div>
+    </section>
+
+    <section class="container-fluid" id="schedule">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+	    <h1><%= l["schedule"] %></h1>
+	  </div>
+	</div>
+	<div class="row">
+	  <% schedule.each do |day, items| %>
+	    <div class="col-md-4">
+	      <div class="faq-question">
+		<h2 class="text-orange"><%= day %></h2>
+		<table class="ft-table">
+		  <thead>
+		    <tr>
+		      <th class="ft-table-col ft-table-col-time" width="20%">Time</th>
+		      <th class="ft-table-col ft-table-col-description" width="80%">Description</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <% items.each do |time, item| %>
+		      <tr>
+			<td class="ft-table-col ft-table-col-time" width="20%"><%= time %></td>
+			<td class="ft-table-col ft-table-col-description" width="80%"><%= item %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	      </div>
+	    </div>
+	  <% end %>
+	</div>
+      </div>
+    </section>
+
+    <section class="container-fluid bg-grey" id="people">
+      <div class="container">
+	<% if people %>
+	  <script type="text/javascript">
+	    window.connections = window.connections || {};
+	  </script>
+
+	  <div id="svgContainer">
+	    <svg id="svg1" width="0" height="0">
+	      <% people.each do |name, props| %>
+		<% if props["connect"] %>
+		  <path
+		     id="<%= name_to_path(name) %>-path"
+		     d="M0 0"
+		     stroke-width="6px"
+		     style="stroke:#cc0000; stroke-dasharray:6,16; fill:none; opacity: 0.4;"/>
+		  <script type="text/javascript">
+		    window.connections["<%= name_to_path(name) %>"] = "<%= name_to_path(props["connect"]) %>";
+		  </script>
+		<% end %>
+	      <% end %>
+	    </svg>
+	  </div>
+	<% end %>
+
+	<div class="row">
+	  <div class="col-md-12 top50">
+	    <h1 class="text-center"><%= l["people"] %></h1>
+	  </div>
+	</div>
+
+	<% if people %>
+	  <% people.each_slice(4) do |ppl| %>
+            <div class="row">
+	      <% ppl.each do |name, props| %>
+		<div class="team-member col-md-3 col-xs-12">
+		  <div class='circular'  id="<%= name_to_path(name) %>"
+		       style='background-image: url("<%= "./images/#{name_to_path(name)}.jpg" %>")'>	    
+		  </div>
+		  <span class="member-title"><%= name %></span>
+		  <p><%= props["description"] %></p>
+		</div>
+	      <% end %>
+	    </div>
+          <% end %>
+	<% else %>
+	  <div class="row">
+	    <div class="col-md-12">
+	      <h3 class="text-center"><%= l["not-logged-in"] %></h3>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-md-12">
+	      <h3 class="text-center">
+		<a href="/auth"><%= l["login"] %></a>
+	      </h3>
+	    </div>
+	  </div>
+	<% end %>
+      </div>
+    </section>
+
+    <section class="container-fluid" id="faq">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+	    <h1><%= l["faq"] %></h1>
+	  </div>
+	</div>
+	<div class="row">
+	  <% faqs.each do |question, answer| %>
+	    <div class="col-md-5">
+	      <div class="faq-question">
+		<h2 class="text-orange"><%= question %></h2>
+		<p><%= answer %></p>
+	      </div>
+	    </div>
+	  <% end %>
+	</div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="./javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="./javascript/app.js"></script>
+  </body>
+</html>
