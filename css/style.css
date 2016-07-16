@@ -1,0 +1,334 @@
+/*
+Light: #73d216;
+Dark: #4e9a06;
+Red: #cc0000;
+*/
+
+* {
+  margin: 0 auto;
+}
+
+body {
+    font-family: 'Poiret One', cursive;
+    overflow-x: hidden;
+}
+
+.bg-grey {
+  background: #eaeaea;
+}
+
+.text-orange {
+  color: #939d3e;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  color: #939d3e;
+  float: left;
+  width: 100%;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+  float: left;
+  width: 100%;
+  font-style: italic;
+}
+
+h3 {
+  float: left;
+  width: 100%;
+  font-size: 26px;
+  font-weight: 500;
+  color: #596164;
+  float: left;
+  width: 100%;
+}
+
+a {
+  color: #939d3e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+nav#main-nav {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 210;
+}
+
+nav#main-nav.fixed {
+  background:#939d3e;
+  position:fixed;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+}
+
+nav#main-nav .container {
+  padding: 25px 140px;
+}
+
+nav#main-nav .container ul {
+  list-style-type: none;
+  float: right;
+  padding: 0px;
+  text-align: right;
+  width: 100%;
+}
+
+nav#main-nav .container ul li {
+  display: inline-block;
+}
+
+nav#main-nav .container ul li + li {
+  margin-left: 15px;
+}
+
+nav#main-nav .container ul li a {
+  color: #fff;
+  opacity: 0.6;
+  font-size: 18px;
+  display: inline-block;
+  transition: .3s opacity;
+}
+
+nav#main-nav .container ul li a:hover,
+nav#main-nav .container ul li a.active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+header {
+  color: #fff;
+  background: #4e9a06;
+  position: relative;
+}
+
+header > .container {
+  padding: 150px 0px 100px 0px;
+  position: relative;
+}
+
+header #countdown {
+  float: left;
+  font-size: 90px;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 100px;
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+header .title {
+  float: left;
+  font-size: 32px;
+  width: 100%;
+  margin-bottom: 10px;
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+header .subtitle {
+  float: left;
+  font-size: 26px;
+  width: 100%;
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  opacity: 0.8;
+}
+
+header .container {
+  position: relative;
+  z-index: 30;
+}
+
+header .bg-overlay-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e9a06+0,f6a803+100 */
+  background: #4e9a06;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #969a1b 0%, #547433 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #969a1b 0%,#547433 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #969a1b 0%,#547433 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e9a06', endColorstr='#73d216',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  left: 0px;
+  opacity: 0.85;
+}
+
+header .header-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 11;
+  background: url(../images/bg-image.jpg) no-repeat center center;
+  background-size: cover;
+  top: 0px;
+  left: 0px;
+}
+
+header {
+  z-index: 10;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+section {
+  z-index: 9;
+}
+
+section ~ section {
+  z-index: 8;
+}
+
+section ~ section ~ section {
+  z-index: 7;
+}
+
+section ~ section ~ section ~ section {
+  z-index: 6;
+}
+
+section {
+  position: relative;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+section > .container {
+  padding: 80px 0px;
+  position: relative;
+}
+
+#location > .container {
+  padding-top: 90px;
+}
+
+.scrolloff {
+  pointer-events: none;
+}
+
+section h1 {
+  margin: 0px 0px 30px;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #919498;
+  float: left;
+  width: 100%;
+}
+
+section table {
+  font-size: 18px;
+  line-height: 30px;
+  color: #6f7277;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+section table thead {
+  display: none;
+}
+
+section .row + .row,
+section .row > div > * + * {
+  margin-top: 30px;
+}
+
+
+
+.location-card {
+  background: #fff;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+  margin-bottom: 50px;
+  float: left;
+  position: relative;
+  z-index: 30;
+  margin-left: 90px;
+}
+
+.location-map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.faq-question {
+  float: left;
+  width: 100%;
+}
+
+.faq-question h2 {
+  margin-bottom: 15px;
+}
+
+.team-member {
+  margin-top: 0px !important;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.member-title {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  color: #333;
+  float: left;
+  width: 100%;
+}
+
+.top50 {
+  margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  header #countdown {
+    font-size: 48px;
+  }
+
+  header > .container {
+    padding-top: 170px;
+  }
+
+  section > .container {
+    padding: 120px 0px;
+  }
+}
+
+.circular {
+  width: 100px;
+  height: 100px;
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#svgContainer {
+  z-index: -10;
+  position: absolute;
+  background-color: rgba(1, 1, 1, 0);
+  opacity: 0.5;
+}
