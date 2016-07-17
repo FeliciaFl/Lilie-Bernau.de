@@ -22,11 +22,12 @@ body {
 }
 
 h1 {
-  font-size: 70px;
-  font-weight: 500;
-  color: #939d3e;
-  float: left;
+  font-size: 90px;
+  font-weight: 600;
   width: 100%;
+  margin-bottom: 10px;
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 h2 {
@@ -36,16 +37,17 @@ h2 {
   float: left;
   width: 100%;
   font-style: italic;
+  color:
 }
 
 h3 {
-  float: left;
+  font-size: 70px;
+  font-weight: 600;
   width: 100%;
-  font-size: 26px;
-  font-weight: 500;
-  color: #596164;
-  float: left;
-  width: 100%;
+  margin-bottom: 10px;
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  color: #969a1b
 }
 
 a {
@@ -122,7 +124,7 @@ header #countdown {
   font-size: 90px;
   font-weight: 600;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   text-align: center;
 }
@@ -166,7 +168,7 @@ header .bg-overlay-gradient {
   z-index: 20;
   top: 0px;
   left: 0px;
-  opacity: 0.85;
+  opacity: 0.65;
 }
 
 header .header-bg {
@@ -231,6 +233,12 @@ section p {
   width: 100%;
 }
 
+
+#lage {
+  height: 480px;
+
+}
+
 section table {
   font-size: 18px;
   line-height: 30px;
@@ -258,7 +266,8 @@ section .row > div > * + * {
   float: left;
   position: relative;
   z-index: 30;
-  margin-left: 90px;
+  margin-left: -5px;
+  margin-top: 120px;
 }
 
 .location-map {

@@ -41,7 +41,7 @@
       <div class="container">
 	<div class="row">
 	  <div class="col-md-8 col-md-offset-2 text-center">
-	    <div id="countdown">Ferienhaus "Lilie" <p> <h2> Eine kleine Oase in Bernau bei Berlin</h2></div>
+	    <div id="countdown"><h1>Ferienhaus "Lilie" <h1><p> <h2> Eine kleine Oase in Bernau bei Berlin</h2></div>
 	  </div>
 	</div>
       </div>
@@ -55,19 +55,19 @@
 
 
 
-    <section class="container-fluid bg-grey" id="location">
-      <div class="container">
-      	<div class="row">
-      	  <div class="col-md-4 col-sm-6">
+    <section class="container-fluid bg-grey" id="lage">
+
+      <!--	<div class="row">
+      	  <!--<div class="col-md-4 col-sm-6"> -->
       	    <div class="location-card">
 
               <div style="display:inline-block" id="bewertung"><a href="http://www.fewo-direkt.de/ferienwohnung-ferienhaus/p2499750" rel="nofollow"><img src="http://www.fewo-direkt.de/haow/api/image/homeaway_de/trips/2499750/reviews" alt="HomeAway Property" style="border:none;" rel="nofollow"/></a><div style="text-align:center;">Bewertungen <a href="http://www.fewo-direkt.de/ferienwohnung-ferienhaus/p2499750#reviews" rel="nofollow">lesen</a> oder <a href="http://www.fewo-direkt.de/ferienwohnung-ferienhaus/ferienhausbewertungen/write/p2499750#write" rel="nofollow">schreiben</a>.</div></div>
 
               <!-- <img src="./images/map-image.jpg" class="img-responsive"> -->
 
-      	    </div>
       	  </div>
-      	</div>
+      	   <!--</div> -->
+      	<!--</div> -->
       </div>
       <div class="location-map">
 
@@ -78,138 +78,73 @@
   width="100%" height="100%" frameborder="0" style="border:0;height:100%;width:100%;" allowfullscreen="">
 </iframe>
 
-      </div>
+
+
+
+
+
+
+
     </section>
 
-    <section class="container-fluid" id="schedule">
+    <section class="container-fluid" id="ausstattung">
       <div class="container">
 	<div class="row">
 	  <div class="col-md-12">
-	    <h1><%= l["schedule"] %></h1>
+      <h3>Ausstattung</h3>
 	  </div>
 	</div>
+
 	<div class="row">
-	  <% schedule.each do |day, items| %>
-	    <div class="col-md-4">
-	      <div class="faq-question">
-		<h2 class="text-orange"><%= day %></h2>
-		<table class="ft-table">
-		  <thead>
-		    <tr>
-		      <th class="ft-table-col ft-table-col-time" width="20%">Time</th>
-		      <th class="ft-table-col ft-table-col-description" width="80%">Description</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <% items.each do |time, item| %>
-		      <tr>
-			<td class="ft-table-col ft-table-col-time" width="20%"><%= time %></td>
-			<td class="ft-table-col ft-table-col-description" width="80%"><%= item %></td>
-		      </tr>
-		    <% end %>
-		  </tbody>
-		</table>
-	      </div>
-	    </div>
-	  <% end %>
+
+
 	</div>
       </div>
     </section>
 
-    <section class="container-fluid bg-grey" id="people">
-      <div class="container">
-	<% if people %>
-	  <script type="text/javascript">
-	    window.connections = window.connections || {};
-	  </script>
 
-	  <div id="svgContainer">
+  </section>
+
+  <section class="container-fluid" id="fotos">
+    <div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h3>Fotos</h3>
+  </div>
+</div>
+
+<div class="row">
 
 
-	    <svg id="svg1" width="0" height="0">
+</div>
+    </div>
+  </section>
 
 
-      <path
-		     id="<%= name_to_path(name) %>-path"
-		     d="M0 0"
-		     stroke-width="6px"
-		     style="stroke:#cc0000; stroke-dasharray:6,16; fill:none; opacity: 0.4;"/>
-		  <script type="text/javascript">
-		    window.connections["<%= name_to_path(name) %>"] = "<%= name_to_path(props["connect"]) %>";
-		  </script>
-		<% end %>
-	      <% end %>
-	    </svg>
-	  </div>
-	<% end %>
 
-	<div class="row">
-	  <div class="col-md-12 top50">
-	    <h1 class="text-center"><%= l["people"] %></h1>
-	  </div>
-	</div>
 
-	<% if people %>
-	  <% people.each_slice(4) do |ppl| %>
-            <div class="row">
-	      <% ppl.each do |name, props| %>
-		<div class="team-member col-md-3 col-xs-12">
-		  <div class='circular'  id="<%= name_to_path(name) %>"
-		       style='background-image: url("<%= "./images/#{name_to_path(name)}.jpg" %>")'>
-		  </div>
-		  <span class="member-title"><%= name %></span>
-		  <p><%= props["description"] %></p>
-		</div>
-	      <% end %>
-	    </div>
-          <% end %>
-	<% else %>
-	  <div class="row">
-	    <div class="col-md-12">
-	      <h3 class="text-center"><%= l["not-logged-in"] %></h3>
-	    </div>
-	  </div>
-	  <div class="row">
-	    <div class="col-md-12">
-	      <h3 class="text-center">
-		<a href="/auth"><%= l["login"] %></a>
-	      </h3>
-	    </div>
-	  </div>
-	<% end %>
-      </div>
-    </section>
 
     <section class="container-fluid" id="verfuegbarkeit">
       <div class="container">
 	<div class="row">
 	  <div class="col-md-12">
-	    <h1>Verfügbarkeit</h1>
-	  </div>
+	    <h3>Verfügbarkeit</h3>
 
 
 
 
-
-	</div>
-
-
-  <div align="center" style="display:inline-block;"><iframe scrolling="no" width="518" height="770" frameBorder="0" style="overflow:hidden;border:none" src="http://www.fewo-direkt.de/haow/widgets/calendar.html?propertyId=2499750&unitId=3043289&monthCount=12&orientation=full&site=homeaway_de"></iframe><a href="http://www.fewo-direkt.de/ferienwohnung-ferienhaus/p2499750" style="display:block;text-align:center;margin-top:-30px; font-size:12px;" rel="nofollow">FeWo-direkt.de #2499750</a></div>
-
-
-
-	<div class="row">
-	  <% faqs.each do |question, answer| %>
-	    <div class="col-md-5">
-	      <div class="faq-question">
-		<h2 class="text-orange"><%= question %></h2>
-		<p><%= answer %></p>
-	      </div>
-	    </div>
-	  <% end %>
-	</div>
+  <center><div align="center" style="display:inline-block;"><iframe scrolling="no" width="518" height="770" frameBorder="0" style="overflow:hidden;border:none" src="http://www.fewo-direkt.de/haow/widgets/calendar.html?propertyId=2499750&unitId=3043289&monthCount=12&orientation=full&site=homeaway_de"></iframe><a href="http://www.fewo-direkt.de/ferienwohnung-ferienhaus/p2499750" style="display:block;text-align:center;margin-top:-30px; font-size:12px;" rel="nofollow">FeWo-direkt.de #2499750</a></div>
+</center>
+  </div>
+</div>
       </div>
     </section>
+
+
+
+
+
+
 
     <script type="text/javascript" src="./javascript/jquery.min.js"></script>
     <script type="text/javascript" src="./javascript/app.js"></script>
