@@ -11,7 +11,9 @@ Red: #cc0000;
 body {
     font-family: 'Poiret One', cursive;
     overflow-x: hidden;
-}
+    color: #640a0a;
+
+  }
 
 .bg-grey {
   background: #eaeaea;
@@ -28,26 +30,39 @@ h1 {
   margin-bottom: 10px;
   text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   text-align: center;
+  color: #640a0a;
+
 }
 
 h2 {
   font-size: 35px;
-  color: white;
+  font-weight: 300;
+  color: #640a0a;
   float: left;
   width: 100%;
-  font-style: italic;
-  color:
+
 }
 
 h3 {
   font-size: 35px;
-  font-weight: 600;
+  font-weight: 800;
   width: 100%;
   margin-bottom: 10px;
   text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   text-align: center;
-  color: #969a1b
+  color: #640a0a;
+  line-height: 20px;
 }
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 24px;
+  color: #6f7277;
+
+}
+
 
 a {
   color: #939d3e;
@@ -61,27 +76,30 @@ a:hover {
 
 nav#main-nav {
   width: 100%;
-  position: absolute;
   top: 0px;
   left: 0px;
   z-index: 210;
+  background-color: #640a0a;
+  white-space: nowrap;
 }
 
 nav#main-nav.fixed {
-  background:#939d3e;
+  background: #640a0a;;
   position:fixed;
   box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
 nav#main-nav .container {
-  padding: 25px 140px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-x:hidden;
 }
 
 nav#main-nav .container ul {
   list-style-type: none;
   float: right;
   padding: 0px;
-  text-align: right;
+  text-align: center;
   width: 100%;
 }
 
@@ -108,7 +126,7 @@ nav#main-nav .container ul li a.active {
 }
 
 header {
-  color: #fff;
+
   background: #4e9a06;
   position: relative;
 }
@@ -126,6 +144,8 @@ header #countdown {
   margin-bottom: 90px;
   text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   text-align: center;
+  background-color: rgba(255,255,255,0.6);
+  padding: 10px;
 }
 
 header .title {
@@ -133,7 +153,7 @@ header .title {
   font-size: 32px;
   width: 100%;
   margin-bottom: 10px;
-  text-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  text-shadow: 0px 3px 15px rgba(0,0,0,0.5);
 }
 
 header .subtitle {
@@ -149,7 +169,7 @@ header .container {
   z-index: 30;
 }
 
-header .bg-overlay-gradient {
+header .bs-overlay-gradient {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e9a06+0,f6a803+100 */
   background: #4e9a06;
   /* Old browsers */
@@ -186,6 +206,14 @@ header {
   box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
 }
 
+
+#meinungen {
+background-color: #640a0a;
+color: white;
+
+
+}
+
 section {
   z-index: 9;
 }
@@ -208,7 +236,7 @@ section {
 }
 
 section > .container {
-  padding: 80px 0px;
+  padding: 60px 0px;
   position: relative;
 }
 
@@ -234,7 +262,7 @@ section p {
 
 
 #lage {
-  height: 480px;
+  height: 450px;
 
 }
 
@@ -323,6 +351,7 @@ section .row > div > * + * {
     padding: 120px 0px;
   }
 }
+
 
 .circular {
   width: 100px;
